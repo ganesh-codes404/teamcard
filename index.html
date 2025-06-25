@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warriors United | Team Showcase</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        @keyframes popIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.page-content {
+    animation: popIn 0.6s ease;
+}
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #000428, #004e92);
+            color: #fff;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            padding: 2rem;
+            background: linear-gradient(45deg, #f12711, #f5af19);
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+
+        h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
+            margin: 0.5rem 0;
+            letter-spacing: 2px;
+        }
+
+        .slogan {
+            font-style: italic;
+            color: #fff;
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
+        .team-logo {
+            width: 100px;
+            filter: drop-shadow(0 0 8px #fff);
+        }
+
+        .players-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        .player-card {
+            background: linear-gradient(135deg, #ffe259, #ffa751);
+            color: #333;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        .player-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+        }
+
+        .player-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .player-card h3 {
+            margin: 0;
+            padding: 1rem;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .modal-content {
+            background: #fff;
+            color: #333;
+            padding: 2rem;
+            border-radius: 15px;
+            width: 320px;
+            position: relative;
+            text-align: left;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            animation: pop 0.3s ease;
+        }
+
+        @keyframes pop {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .close {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .modal-content h2 {
+            margin-top: 0;
+            font-family: 'Bebas Neue', sans-serif;
+            color: #f12711;
+            letter-spacing: 1px;
+        }
+
+        .modal-content p {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo.png" class="team-logo">
+        <h1>The Union Circle</h1>
+        <p class="slogan">Everyone is a cricket fan</p>
+    </header>
+    
+
+<section class="players-grid">
+    <div class="player-card" data-name="Jasprit Bumrah" data-strike="142.5" data-matches="85" data-jersey="7" data-performance="every match he plays">
+        <img src="player1.jpg" alt="Jasprit Bumrah">
+        <h3>Jasprit Bumrah</h3>
+    </div>
+
+    <div class="player-card" data-name="Ben Stokes" data-strike="130.2" data-matches="70" data-jersey="11" data-performance="2019 odi wc">
+        <img src="player2.jpg" alt="Ben Stokes">
+        <h3>Ben Stokes</h3>
+    </div>
+
+    <div class="player-card" data-name="Rishab Pant" data-strike="125.8" data-matches="90" data-jersey="22" data-performance="160kmph vs the divider">
+        <img src="player3.jpg" alt="Rishab Pant">
+        <h3>Rishab Pant</h3>
+    </div>
+
+    <div class="player-card" data-name="Alistar Cook" data-strike="118.4" data-matches="110" data-jersey="17" data-performance="189 runs vs Ireland">
+        <img src="player4.jpg" alt="Alistar Cook">
+        <h3>Alistar Cook</h3>
+    </div>
+
+    <div class="player-card" data-name="Oscar Piastri" data-strike="150.1" data-matches="65" data-jersey="3" data-performance="Anything he does">
+        <img src="player5.jpg" alt="Oscar Piastri">
+        <h3>Oscar Piastri</h3>
+    </div>
+
+    <div class="player-card" data-name="Peter Parker" data-strike="999.9" data-matches="Unlimited" data-jersey="0" data-performance="-1 vs Electro(watch TASM2)">
+        <img src="player6.jpg" alt="Peter Parker">
+        <h3>Peter Parker</h3>
+    </div>
+
+    <div class="player-card" data-name="Charles Leclerc" data-strike="120.0" data-matches="95" data-jersey="21" data-performance="0 vs Ferrari stratergy">
+        <img src="player7.jpg" alt="Charles Leclerc">
+        <h3>Charles Leclerc</h3>
+    </div>
+
+    <div class="player-card" data-name="Steve Smith" data-strike="110.2" data-matches="78" data-jersey="5" data-performance="Sandpaper vs South Africa">
+        <img src="player8.jpg" alt="Steve Smith">
+        <h3>Steve Smith</h3>
+    </div>
+
+    <div class="player-card" data-name="Max Verstappen" data-strike="300.5" data-matches="55" data-jersey="33" data-performance="100 in the rain">
+        <img src="player9.png" alt="Max Verstappen">
+        <h3>Max Verstappen</h3>
+    </div>
+
+    <div class="player-card" data-name="Daniel Ricciardo" data-strike="132.4" data-matches="88" data-jersey="4" data-performance="Losing his seat to Liam and Oscar">
+        <img src="player10.jpeg" alt="Daniel Ricciardo">
+        <h3>Daniel Ricciardo</h3>
+    </div>
+</section>
+
+<div id="playerModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modalName"></h2>
+        <p><strong>Strike Rate:</strong> <span id="modalStrike"></span></p>
+        <p><strong>Matches Played:</strong> <span id="modalMatches"></span></p>
+        <p><strong>Jersey Number:</strong> <span id="modalJersey"></span></p>
+        <p><strong>Best Performance:</strong> <span id="modalPerformance"></span></p>
+    </div>
+</div>
+
+<script>
+    const modal = document.getElementById('playerModal');
+    const modalName = document.getElementById('modalName');
+    const modalStrike = document.getElementById('modalStrike');
+    const modalMatches = document.getElementById('modalMatches');
+    const modalJersey = document.getElementById('modalJersey');
+    const modalPerformance = document.getElementById('modalPerformance');
+    const closeBtn = document.querySelector('.close');
+
+    document.querySelectorAll('.player-card').forEach(card => {
+        card.addEventListener('click', () => {
+            modalName.textContent = card.dataset.name;
+            modalStrike.textContent = card.dataset.strike;
+            modalMatches.textContent = card.dataset.matches;
+            modalJersey.textContent = card.dataset.jersey;
+            modalPerformance.textContent = card.dataset.performance;
+            modal.style.display = 'flex';
+        });
+    });
+
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', e => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>
